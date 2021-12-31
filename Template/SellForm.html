@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+
+<title> SearchProduces </title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static '/css/style1.css' %}">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create a column layout with Flexbox */
+.row {
+  display: flex;
+}
+
+/* Left column (menu) */
+.left {
+  flex: 35%;
+  padding: 15px 0;
+}
+
+.left h2 {
+  padding-left: 8px;
+}
+
+/* Right column (page content) */
+.right {
+  flex: 65%;
+  padding: 15px;
+}
+
+/* Style the search box */
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+/* Style the navigation menu inside the left column */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+
+#myMenu li a:hover {
+  background-color: #eee;
+}
+</style>
+
+
+</head>
+<body>
+  <div class="bgimg" style="background-image: url('{% static '/images/img.JFIF' %}');">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container">
+  <a href="/" class="navbar-brand text-warning font-weight-bold">FARMER PORTAL</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+      <span class="navbar-toggler-icon"> </span>
+  </button>
+  <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+    <ul class="navbar-nav ml-auto" >
+     <li class="nav-item">
+       <a href="/" class="nav-link text-red">BACK TO HOME</a>
+       </li></ul></div></div></nav>
+<div class="container text-center headerset">
+<h1> WELCOME </h1>
+<h2> Farming is a Profession of Hope </h2>
+</div>
+</div>
+
+<h2>FARMER PROCOUDES UPLAOD FORM </h2>
+<p>Fill Details to upload the for Selling:</p>
+
+<div class="row">
+  <div class="left" style="background-color:#bbb;">
+    <h2>FORM Field Menu</h2>
+
+    <ul id="myMenu">
+      <li><a href="#">FARMER NAME</a></li>
+      <li><a href="#">EMAIL</a></li>
+      <li><a href="#">CONTACT NUMBER</a></li>
+      <li><a href="#">OCCUPATION</a></li>
+      <li><a href="#">ADDRESS</a></li>
+      <li><a href="#">STATE/COUNTRY</a></li>
+      <li><a href="#">PRODUCE NAME</a></li>
+      <li><a href="#">QTY</a></li>
+      <li><a href="#">QUALITY</a></li>
+      <li><a href="#">PRICE/KG</a></li>
+      <li><a href="#">CATEGORY</a></li>
+    </ul>
+  </div>
+  
+ <div  align="center"> <div class="right" style="background-color:#ddd;">
+    <h2>All Fields are mandatory</h2>
+    <form method="POST" >
+       {% csrf_token %}
+    <p><input type="text" name="Name " placeholder="FamerName"></p>
+    <p><input type="email" name="Email " placeholder="Email"></p>
+    <p><input type="text" name="Contact " placeholder="FamerContact"></p>
+    <p><input type="text" name="Occupation" placeholder="Occupation"></p>
+    <p><input type="text" name="Address " placeholder="FamerAddress"></p>
+    <p><input type="text" name="State " placeholder="State/COUNTRY"></p>
+    <p><input type="text" name="ProduceName " placeholder="ProduceName"></p>
+    <p><input type="number" name="QTY" placeholder="ProduceQty"></p>
+    <p><input type="text" name="QUALITY " placeholder="ProduceQuality"></p>
+    <p><input type="number" name="Produceprice " placeholder="ProducePRice"></p>
+    <p><input type="text" name="category " placeholder="category"></p>
+    <p>Upload Image</p>
+    <input type="image" src="#" alt="Submit" width="48" height="48">
+    <input type="submit" value="UPLAOD">
+  </form>
+  </div>
+</div>
+</div>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small cyan darken-3" style="background-color: black;">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          
+            <i class="fa fa-facebook-square" style="font-size:48px;color:red"></i>
+          
+          <!-- Twitter -->
+         <i class="fa fa-twitter-square" style="font-size:48px;color:red"></i>
+          
+          <!-- Google +-->
+          <i class="fa fa-facebook-square" style="font-size:48px;color:red"></i>
+
+          <!--Linkedin -->
+         <i class="fa fa-linkedin-square" style="font-size:48px;color:red"></i>
+         
+          <!--Instagram-->
+         <i class="fa fa-instagram" style="font-size:48px;color:red"></i>
+
+          <!--Pinterest-->
+          <i class="fa fa-pinterest-square" style="font-size:48px;color:red"></i>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> www.FarmerPortal@385.gov.in</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

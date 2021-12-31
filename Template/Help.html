@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> Help </title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style1.css' %}">
+    <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+  .navbar {
+      margin-bottom: 0;
+      border-radius: 40px;
+      background-image: linear-gradient(to right top, #926b12, #84720c, #75780f, #637d19, #4f8227, #548623, #59891f, #5e8d19, #838f00, #aa8d00, #d18800, #f87d0d);
+      color: black;
+
+      background-image: url('{% static '/images/navBarBack.jpg' %}');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+
+      
+    }
+</style>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container">
+  <a href="#" class="navbar-brand text-success font-weight-bold">FARMER PORTAL</a>
+  <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="/Services" class="nav-item nav-link">Service</a>
+                <a href="/About" class="nav-item nav-link">About US</a>
+                <a href="{% url 'Contact' %}" class="nav-item nav-link">Contact Us</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+    <span class="navbar-toggler-icon"> </span>
+   </button>
+<div class="collapse navbar-collapse text-center" id="collapsenavbar">
+    <ul class="navbar-nav ml-auto" >
+     <li class="nav-item">
+       <a href="/" class="nav-link text-black">HOME</a>
+     </li>
+</ul>
+</div>
+
+  </div>
+  </nav>
+  
+<div class="bgimg" style="background-image: url('{% static '/images/img.JFIF' %}');">
+<div class="container text-center headerset">
+<h1> WELCOME </h1>
+<h2> Farming is a Profession of Hope </h2>
+</div>
+</div>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small cyan darken-3" style="background-color: black;">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          
+            <i class="fa fa-facebook-square" style="font-size:48px;color:red"></i>
+          
+          <!-- Twitter -->
+         <i class="fa fa-twitter-square" style="font-size:48px;color:red"></i>
+          
+          <!-- Google +-->
+          <i class="fa fa-facebook-square" style="font-size:48px;color:red"></i>
+
+          <!--Linkedin -->
+         <i class="fa fa-linkedin-square" style="font-size:48px;color:red"></i>
+         
+          <!--Instagram-->
+         <i class="fa fa-instagram" style="font-size:48px;color:red"></i>
+
+          <!--Pinterest-->
+          <i class="fa fa-pinterest-square" style="font-size:48px;color:red"></i>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> www.FarmerPortal@385.gov.in</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

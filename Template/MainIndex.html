@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<title>www.farmerPortal.com</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static '/css/MainIndex.css' %}">
+
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+</head>
+<body style="background-color: black; font-family: 'Comic Neue', cursive;">
+    <script>
+var sound = new Audio();
+sound.src = "sound.mp3"
+
+
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+
+</script>
+
+<div class="bs-example" style="background-image: url('{% static '/images/navBarBack.jpg' %}');">
+    <nav class="navbar navbar-expand-md ">
+        <a href="#default" class="navbar-brand">
+           <img src="{%static '/images/LOGO.jpg' %}" id="logo" width="200" height="100">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="/Services" class="nav-item nav-link">Service</a>
+                <a href="/About" class="nav-item nav-link">About US</a>
+                <a href="{% url 'Contact' %}" class="nav-item nav-link">Contact Us</a>
+                <a href="/Help" class="nav-item nav-link">Help</a>
+                {%if user.is_authenticated %}
+                <a href="#" class="nav-item nav-link">Profile</a>
+                {% endif %}
+                </div>
+                <div class="navbar-nav ml-auto">
+               
+
+
+ <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn"><i class="fa fa-search"></i></button>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+    <a href="#about">Wheat</a>
+    <a href="#base">Rice</a>
+    <a href="#blog">Potato</a>
+    <a href="#contact">Onion</a>
+    <a href="#custom">Dall</a>
+    <a href="#support">Bajra</a>
+    <a href="#tools">MoongDall</a>
+  </div>
+</div>
+ 
+ <a href="/searchProduces" class="nav-item nav-link">FARMER GOV YOJANAS </a>
+
+
+                {% if user.is_authenticated %}
+                <b class="glyphicon glyphicon-user">welcome {{user.username}}</b>
+                <a href="{% url 'logout' %}" class="nav-item nav-link">Logout</a>
+                {% else %}
+                    <a href="\accounts/login/" class="btn btn-primary  title="Choose your JOB TO LOGIn>LOGIN</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+</div>
+<hr>
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div id="text"><h3> Welcome To</h3>
+        <h1><b>Farmer Portal <span></span></b></h1>
+        <p>"Village development is the key to develop nation"</p>
+</div>
+  <img src="{% static '/images/i18.jpg' %}" style="width:100%" height="400">
+</div>
+
+<div class="mySlides fade">
+   <div id="text"><h3> Welcome To</h3>
+        <h1><b>Farmer Portal <span></span></b></h1>
+        <p>"Village development is the key to develop nation"</p>
+</div>
+  <img src="{% static '/images/i18.jpg' %}" style="width:100%" height="400">
+</div>
+
+<div class="mySlides fade">
+   <div id="text"><h3> Welcome To</h3>
+        <h1><b>Farmer Portal <span></span></b></h1>
+        <p>"Village development is the key to develop nation"</p>
+</div>
+  <img src="{% static '/images/i2.jpg' %}" style="width:100%" height="400">
+</div>
+</div>
+<br>
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+  <div id="text">
+    <h4 style="font-family: Courier New; color: orange;" >Farmer/ Buyer ? What YOU Have</h4>
+    <h2 style="font-family: Courier New; color: white;">If You are New User Register(SignUp)/Already Have Account Login</h2>
+    {% if user.is_authenticated %}
+    <center><b style="color: white;">{{user.email}}<br> <marquee> Welcome to Home Page {{user.username}}</marquee></b></center>
+    {% else %}
+     <a href="/accounts/register" onmousedown="sound.play()" class="btn btn-primary">  SignUp Farmer </a>
+     <a href="/accounts/registerbuyer" onmousedown="sound.play()" class="btn btn-success">  SignUp  Buyer </a>
+  </div>
+  {% endif %}
+
+<hr>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides,1000); // Change image every 2 seconds
+}
+</script>
+
+
+<span>
+    <br>
+<br><br><br><br><br>
+    <br>
+</span>
+
+<center><b style="font-size: 25px; color: orange;">MOTO TO PROVIDE IN EASY ...Way</b></center>
+<!-- services images -->
+
+<div class="row" id="row1">
+  <div class="column">
+    <img src="{%static '/images/ii5.jpg' %}" alt="potato" style="width:90%" id="row1">
+    <div class="overlay">ALLU(potato)</div>
+  </div>
+  <div class="column">
+    <img src="{% static  '/images/ii7.jpg' %}" alt="Soybean" style="width:90%" id="row1">
+    <div class="overlay">Soyabean</div>
+  </div>
+  <div class="column">
+    <img src="{% static '/images/ii8.jpg' %}" alt="pyaj" style="width:90%;"  height="243" id="row1">
+    <div class="overlay">Gehu(Wheat)</div>
+  </div>
+</div>
+<hr>
+<div class="row" >
+  <div class="column">
+    <img src="{% static '/images/ii13.jpg' %}" alt="Snow" style="width:90%" id="row1">
+    <div class="overlay">Dall(pulses)</div>
+  </div>
+  <div class="column">
+    <img src="{% static '/images/i15.jpg' %}" alt="Forest" style="width:90%" id="row1">
+    <div class="overlay">Goobi(Cabage)</div>
+  </div>
+  <div class="column">
+    <img src="{% static '/images/ii10.jpg' %}" alt="Chaval(Rice)" style="width:90%" height="250" id="row1">
+    <div class="overlay">Chaval(Rice)</div>
+  </div>
+</div>
+<!-- End Of Services Image 
+
+Footer Start
+-->
+<hr>
+<hr>
+<center><b style="font-size: 20px; color:orange;">....Stay Connecting...</b></center>
+<div class="jumbotron" id="jum1" style="background-image: url('{% static '/images/ii3.jpg' %}');">
+    <h4>Mail/Message::</h4>
+    <h1 style="font-family:Courier New;">Farmerportal385@gmail.com</h1>   
+    <span></span>   
+    <p>For any Query or feedback . contact us on <b>7389370811<b> <strong><i class="fa fa-copyright" aria-hidden="true"></i>-copyRight : 2021 farmerPortal.gov.in</strong></p>
+  </div>
+
+
+
+
+  <footer class="page-footer font-small cyan darken-3" style="background-image:url('{% static '/images/ii8.jpg' %}'); background-repeat: ; background-size: 50%;">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          
+            <i class="fa fa-facebook-square" style="font-size:48px;color:red"></i>
+          
+          <!-- Twitter -->
+         <i class="fa fa-twitter-square" style="font-size:48px;color:red"></i>
+          
+          <!-- Google +-->
+          <i class="fa fa-facebook-square" style="font-size:48px;color:red"></i>
+
+          <!--Linkedin -->
+         <i class="fa fa-linkedin-square" style="font-size:48px;color:red"></i>
+         
+          <!--Instagram-->
+         <i class="fa fa-instagram" style="font-size:48px;color:red"></i>
+
+          <!--Pinterest-->
+          <i class="fa fa-pinterest-square" style="font-size:48px;color:red"></i>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="/"> www.FarmerPortal@385.gov.in</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+ 
+
+
+</body>
+</html>                            

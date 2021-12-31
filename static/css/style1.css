@@ -1,0 +1,86 @@
+{% load static %}
+.navbar {
+      margin-bottom: 0;
+      border-radius: 40px;
+      background-image: linear-gradient(to right top, #926b12, #84720c, #75780f, #637d19, #4f8227, #548623, #59891f, #5e8d19, #838f00, #aa8d00, #d18800, #f87d0d);
+      color: black;
+
+      background-image: url('{% static '/images/navBarBack.jpg' %}');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+
+      
+    }
+
+
+.headerset{
+  padding-top: 200px;
+  box-sizing: borger-box;
+  color: white;
+}
+.headerset h2{
+  font-size: 52px;
+}
+.headerset h1{
+  font-size: 82px;
+  font-weight: bold;
+}
+.ourservices{
+  padding: 100px 0px 60px;
+  height: 700px;
+}
+
+.rowsetting{
+  margin: 10px 0px important;
+}
+
+.ourservices h1{
+font-size: 50px;
+font-weight: bold;
+}
+
+.imgsetting{
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+
+.fa-thumbs-up{
+  margin-top: 20px;
+}
+
+.rowsetting h2{
+  margin-top: 20px;
+  font-weght: bold;
+  font-size: 20px;
+}
+
+.rowsetting p{
+  padding:10px;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

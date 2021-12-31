@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/css/next.css' %}">
+	<title>Thank you Page</title>
+</head>
+<body>
+	<b>YOUR EMAIL IS VRIFIED DETAIL TO LOGIN </b><hr>
+	<H1>YOUR NAME:   :{{name}}</H1>
+	<H1>YOUR NAME:   :{{EMAIL}}</H1>
+	<H1>YOUR PASSWORD:   :{{password}}</H1>
+	<H1>YOUR Confirm Password:   :{{cpassword}}</H1>
+	<center>Thank YOU user ....<a href="/register">back</a>
+		<img src="{% static '/images/i2.jpg' %}" width="800" height="400">
+</center>
+</body>
+</html>

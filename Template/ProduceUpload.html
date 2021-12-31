@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> Services </title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style1.css' %}">
+    <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+  th{
+    font-size:20px;
+    font-family:serif;
+    background-color: orange;
+    border-radius: 50px;
+  }
+  td{
+    border-radius: 20px;
+  }
+</style>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container">
+<a href="/" class="navbar-brand text-warning font-weight-bold">FARMER PORTAL</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+      <span class="navbar-toggler-icon"> </span>
+</button>
+<div class="collapse navbar-collapse text-center" id="collapsenavbar">
+    <ul class="navbar-nav ml-auto" >
+     <li class="nav-item">
+       <a href="{% url 'farmerProfile' %}" class="nav-link text-red">BACK TO PROFILE</a>
+       </li>
+</ul>
+</div>
+
+  </div>
+  </nav>
+<div class="bgimg" style="background-image: url('{% static '/images/img.JFIF' %}'); ">
+<center style="color: orange;"><h1> WELCOME </h1>
+<h2> Farming is a Profession of Hope </h2></center>
+<div class="container">
+  <div class="jumbotron">
+    <center>
+      <table>
+     <form method="post" enctype="multipart/form-data" action="">
+     {% csrf_token %}
+     <b style="background-color: green; color: black; font-size: 30px; border-radius: 20px;">Fill Form To Sell The Produce </b><br>
+       <tr><th>NAME</th><td>{{form.Name}}</td><th>EMAIL</th><td>{{form.Email}}</td></tr><br>
+       <tr><th>Contact</th><td>{{form.contact}}</td><th>Address/Village</th><td>{{form.Address}}</td></tr>
+       <tr><th>City/District</th><td>{{form.city_dist}}</td><th>State/Country</th><td>{{form.state_country}}</td></tr>
+       <tr><th>ProduceName</th><td>{{form.ProduceName}}</td><th>Occupation</th><td>{{form.Occupation}}</td></tr>
+       <tr><th>TotQtyAvailableInTone</th><td>{{form.TotQuantity}}</td><th>ProduceType</th><td>{{form.Category}}</td></tr>
+       <tr><th>ProducePrice/kg</th><td>{{form.Price_Kg}}</td><th>ProduceQuality/Condition</th><td>{{form.Quality}}</td></tr>
+       <tr><th>ProduceImage</th><td>{{form.Image}}</td><td><button type="submit" class="btn btn-primary">Upload</button></td></tr>
+    </form>
+  </table></center>  
+  
+  </div>
+</div>
+  <marquee><i><b style="font-family: sans-serif; color: orange;">Click TO Upload Produce TO Sell </b></i></marquee>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small cyan darken-3" style="background-color: black;">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          
+            <i class="fa fa-facebook-square" style="font-size:48px;color:red"></i>
+          
+          <!-- Twitter -->
+         <i class="fa fa-twitter-square" style="font-size:48px;color:red"></i>
+          
+          <!-- Google +-->
+          <i class="fa fa-facebook-square" style="font-size:48px;color:red"></i>
+
+          <!--Linkedin -->
+         <i class="fa fa-linkedin-square" style="font-size:48px;color:red"></i>
+         
+          <!--Instagram-->
+         <i class="fa fa-instagram" style="font-size:48px;color:red"></i>
+
+          <!--Pinterest-->
+          <i class="fa fa-pinterest-square" style="font-size:48px;color:red"></i>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="/"> www.FarmerPortal@385.gov.in</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

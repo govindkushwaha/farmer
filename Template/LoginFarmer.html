@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Yinka Enoch Adedokun">
+	<link rel="stylesheet" type="text/css" href="{%static '/css/LoginFarmer.css' %}">
+
+	<title>Login Farmer</title>
+	
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body style="	background-color: black;">
+	<!-- Main Content -->
+	<center>
+	<div class="container-fluid">
+		<div class="row main-content bg-success text-center">
+			<div class="col-md-4 text-center company__info">
+				<span class="company__logo"><h2><span><img src="{% static '/images/LOGO.jpg' %}" id="logo"width="200" height="150"></span></h2></span>
+				<h4 class="company_title">Farmer Portal</h4>
+			</div>
+			<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+				<div class="container-fluid">
+					<div class="row">
+						<h2>Log In Farmer</h2>
+					</div>
+					<div class="row">
+						<form control="" class="form-group" action=" " method="post">
+							{% csrf_token %}
+							<div class="row">
+								<input type="email" name="username" id="username" class="form__input" placeholder="username">
+							</div>
+							<div class="row">
+								<!-- <span class="fa fa-lock"></span> -->
+								<input type="password" name="password" id="password" class="form__input" placeholder="Password">
+							</div>
+							
+							<div class="row">
+								<b>LOGIN AS A FARMER TO SELL THE PRODUCE</b>
+							</div>
+							<div class="row">
+								<input type="submit" value="Login" class="btn">
+							</div>
+						</form>
+					</div>
+					<div class="row">
+						<strong>Don't have an account? <a href="RegistrationFormFarmer" class="btn btn-primary">Register Here</a></strong>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</center>
+
+<!-- Footer -->
+<footer class="page-footer font-small cyan darken-3" style="background-color: black;">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          
+            <i class="fa fa-facebook-square" style="font-size:48px;color:red"></i>
+          
+          <!-- Twitter -->
+         <i class="fa fa-twitter-square" style="font-size:48px;color:red"></i>
+          
+          <!-- Google +-->
+          <i class="fa fa-facebook-square" style="font-size:48px;color:red"></i>
+
+          <!--Linkedin -->
+         <i class="fa fa-linkedin-square" style="font-size:48px;color:red"></i>
+         
+          <!--Instagram-->
+         <i class="fa fa-instagram" style="font-size:48px;color:red"></i>
+
+          <!--Pinterest-->
+          <i class="fa fa-pinterest-square" style="font-size:48px;color:red"></i>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> www.FarmerPortal@385.gov.in</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+</body>
+</html>

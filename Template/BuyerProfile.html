@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 40px;
+      background-image: linear-gradient(to right top, #926b12, #84720c, #75780f, #637d19, #4f8227, #548623, #59891f, #5e8d19, #838f00, #aa8d00, #d18800, #f87d0d);
+      color: black;
+
+      background-image: url('{% static '/images/navBarBack.jpg' %}');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+
+      
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: black;
+      padding: 25px;
+    }
+    body{
+       background-image: linear-gradient(to right top, #6b9212, #009051, #008782, #00789e, #00659b, #006aa3, #006eab, #0073b3, #0095ce, #00b6e0, #00d8e8, #0df8e8);
+       background-image: url('{% static '/images/ii7.jpg' %}');
+       background-repeat: no-repeat;
+       background-size: 100%;
+    }
+
+ input.hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+#profile-image1 {
+    cursor: pointer;
+  
+     width: 100px;
+    height: 100px;
+  border:2px solid #03b1ce ;}
+  .tital{ font-size:16px; font-weight:500;}
+   .bot-border{ border-bottom:1px #f8f8f8 solid;  margin:5px 0  5px 0}  
+
+
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">FarmerPortal</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'HomePage'%}" class="glyphicon glyphicon-home">Home</a></li>
+        <li><a href="/services" class="glyphicon glyphicon-check">Service</a></li>
+        <li><a href="/About" class="glyphicon glyphicon-check">About US</a></li>
+        <li><a href="{% url 'Contact' %}" class="glyphicon glyphicon-check">Contact Us</a></li> 
+        <li><a href="/Help" class="glyphicon glyphicon-check">Help</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span><b>{{user.username}}</b></a></li>
+        <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <center><h2><b>BUYER PROFILE</b></h2></center>
+
+<div style="float: right;">
+                
+<div class="col-sm-5 col-xs-6 tital " ><img src="{% static '/images/ii8.jpg' %}" style="border-radius:40PX"  width='300'  height='200'alt="Image"></div>
+     <div class="clearfix"></div>
+<div class="bot-border"></div>
+<br><br><br>
+<div class="col-sm-5 col-xs-6 tital " ><img src="{% static '/images/ii13.jpg' %}"  style="border-radius:40PX"  width='300'  height='200'alt="Image"></div>
+     <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+</div>
+
+       <div class="col-md-7 ">
+
+<div class="panel panel-default">
+ <center><div class="panel-heading"><h4 >USER PROFILE </h4></div></center> 
+   <div class="panel-body" style="background-image: url({% static '/images/i2.jpg' %}); background-size: 100%; color: black;">
+       
+    <div class="box box-info">
+        
+            <div class="box-body">
+                     <div class="col-sm-6">
+                     <div  align="center"> <img alt="User Pic" src="{% static '/images/profile2.png' %}" id="profile-image1" class="img-circle img-responsive"> 
+                
+                <input id="profile-image-upload" class="hidden" type="file">
+<div style="color:#999;" >.............BUYER...............</div>
+                <!--Upload Image Js And Css-->
+           
+              
+
+                     
+                     
+                     </div>
+              
+              <br>
+    
+              <!-- /input-group -->
+            </div>
+            <div class="col-sm-6">
+            <h4 style="color:#00b1b1;"><p class="glyphicon glyphicon-check"><b>{{user.first_name}}{{user.last_name}}</b></p> </h4></span>
+              <span><b>I am BUYER</b></span>            
+            </div>
+            <div class="clearfix"></div>
+            <hr style="margin:5px 0 5px 0;">
+    
+              
+<div class="col-sm-5 col-xs-6 tital " ><b>USER Name:</b></div><div class="col-sm-7 col-xs-6 "><p class="glyphicon glyphicon-check"><b>{{user.username}}</b></p></div>
+     <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " ><b>FIRST Name:</b></div><div class="col-sm-7"><p class="glyphicon glyphicon-check"><b>{{user.first_name}}</b></p> </div>
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " ><b>LAST Name:</b></div><div class="col-sm-7"> <p class="glyphicon glyphicon-check"><b>{{user.last_name}}</b></p></div>
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+<div class="col-sm-5 col-xs-6 tital " ><b>EMAIL:</b></div><div class="col-sm-7"><p class="glyphicon glyphicon-check"><b>{{user.email}}</b></p></div>
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+
+<div class="col-sm-5 col-xs-6 tital " ><b>OCCUPATION:</b></div><div class="col-sm-7"><p class="glyphicon glyphicon-check"><b>BUYER</b></p></div>
+  <div class="clearfix"></div>
+<div class="bot-border"></div>
+
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+       
+      <div style="float: right;">
+ <marquee style="color: orange; background-color: black;">LIST OF farmer Details and Produces are Here Present Keep Upadated to check Regulary</marquee>
+       <center>
+       <a href ="{% url 'FarmerToBuyerList' %}" class="btn btn-primary">BUY PRODUCES </a>
+      </center>
+         <marquee style="color: orange; background-color: black;"><strong>TO Buy A produces From Farmer you Send Request to call Back / you can directly access From Farmer using call</strong></marquee> 
+</div>
+
+    </div> 
+    </div>
+</div>  
+    <script>
+              $(function() {
+    $('#profile-image1').on('click', function() {
+        $('#profile-image-upload').click();
+    });
+});       
+              </script> 
+       
+       
+       
+       
+   </div>
+</div>
+</center>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>
+  <!-- Footer Eleme
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="/"> www.FarmerPortal@385.gov.in</a>
+  </div>
+  <!-- Copyright -->
+
+
+  </p>
+</footer>
+
+</body>
+</html>
